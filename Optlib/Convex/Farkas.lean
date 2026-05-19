@@ -7,8 +7,8 @@ import Mathlib.Analysis.Convex.Cone.Basic
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Analysis.NormedSpace.HahnBanach.Separation
 import Mathlib.Analysis.InnerProductSpace.PiL2
-import Mathlib.Data.Matrix.Rank
-import Mathlib.LinearAlgebra.FiniteDimensional
+import Mathlib.LinearAlgebra.Matrix.Rank
+import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Optlib.Differential.Calculation
 import Optlib.Convex.ClosedCone
 

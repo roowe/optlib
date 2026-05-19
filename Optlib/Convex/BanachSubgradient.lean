@@ -3,8 +3,10 @@ Copyright (c) 2023 Wanyi He. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Author: Wanyi He, Chenyi Li, Zichen Wang
 -/
-import Mathlib.Analysis.NormedSpace.HahnBanach.Separation
-import Mathlib.LinearAlgebra.Dual
+import Mathlib.Analysis.LocallyConvex.Separation
+import Mathlib.Analysis.Normed.Module.Basic
+import Mathlib.LinearAlgebra.Dual.Lemmas
+import Mathlib.Analysis.Convex.Basic
 
 
 section

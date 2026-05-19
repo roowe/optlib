@@ -5,7 +5,7 @@ Author: Anqing Shen, Yifan Bai, Chenyi Li, Zaiwen Wen
 -/
 import Mathlib.Order.LiminfLimsup
 import Mathlib.Topology.Defs.Filter
-import Mathlib.Data.Real.EReal
+import Mathlib.Data.EReal.Basic
 import Optlib.Differential.Calculation
 import Optlib.Function.Proximal
 

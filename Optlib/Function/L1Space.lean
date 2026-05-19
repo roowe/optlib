@@ -6,6 +6,8 @@ Authors: Zichen Wang
 import Mathlib.Analysis.Normed.Lp.PiLp
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 import Mathlib.Analysis.InnerProductSpace.Basic
+import Mathlib.LinearAlgebra.Basis.Defs
+import Mathlib.LinearAlgebra.Basis.Basic
 /-!
 # l₁ Space and Continuous Linear Maps between l₁ Space and Finite Dimensional Space
 
@@ -54,7 +56,7 @@ open scoped Pointwise Module
 noncomputable def f : Fin (Module.finrank ℝ α) → PiLp 1 (fun _ : Fin (Module.finrank ℝ α) => ℝ) :=
   fun i j => if i = j then ‖(Module.finBasis ℝ α) i‖ else 0
 
-noncomputable def σ := Basis.constrL (Module.finBasis ℝ α) f
+noncomputable def σ := Module.Basis.constrL (Module.finBasis ℝ α) f
 
 theorem continuous_map_sigma : Continuous (σ (α := α)):= by exact ContinuousLinearMap.continuous σ
 

@@ -6,8 +6,8 @@ Authors: Chenyi Li, Shengyang Xu, Yuxuan Wu
 import Mathlib.Analysis.Convex.Cone.Basic
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Analysis.NormedSpace.HahnBanach.Separation
-import Mathlib.Data.Matrix.Rank
-import Mathlib.LinearAlgebra.FiniteDimensional
+import Mathlib.LinearAlgebra.Matrix.Rank
+import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Mathlib.Analysis.Calculus.Implicit
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.InnerProductSpace.Calculus
