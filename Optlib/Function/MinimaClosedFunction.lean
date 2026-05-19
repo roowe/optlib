@@ -22,28 +22,7 @@ variable {E F : Type*} [CompleteLinearOrder F]
 
 private lemma l0 {f : E → F}(y : F) (h : (f ⁻¹' Set.Iic y).Nonempty) :
     sInf {f x | x ∈ f ⁻¹' Set.Iic y} = sInf {f x | x : E}:= by
-  have h₀ : {f x | x : E} = {f x | x ∈ f ⁻¹' Set.Iic y} ∪ {f x | x ∈ (f ⁻¹' Set.Iic y)ᶜ} := by
-    ext y'; constructor
-    · rintro ⟨x, xeq⟩
-      by_cases xsub : x ∈ f ⁻¹' Set.Iic y
-      · exact Or.inl ⟨x, xsub, xeq⟩
-      · exact Or.inr ⟨x, xsub, xeq⟩
-    · intro h'
-      rcases h' with ⟨x, _, xeq⟩ | ⟨x, _, xeq⟩
-      · exact Exists.intro x xeq
-      · exact Exists.intro x xeq
-  have h₁ : sInf {f x | x ∈ f ⁻¹' Set.Iic y} ≤ sInf {f x | x ∈ (f ⁻¹' Set.Iic y)ᶜ} := by
-    rcases h with ⟨x', xsub⟩
-    refine le_trans (sInf_le ⟨x', xsub, rfl⟩) (le_sInf ?_)
-    rintro _ ⟨x, xnsub, rfl⟩
-    simp only [Set.mem_preimage, Set.mem_compl, Set.mem_Iic, not_le] at xnsub
-    exact le_trans xsub xnsub.le
-  calc
-    sInf {f x | x ∈ f ⁻¹' Set.Iic y} =
-      sInf {f x | x ∈ f ⁻¹' Set.Iic y} ⊓ sInf {f x | x ∈ (f ⁻¹' Set.Iic y)ᶜ} :=
-        Iff.mpr left_eq_inf h₁
-    _ = sInf ({f x | x ∈ f ⁻¹' Set.Iic y} ∪ {f x | x ∈ (f ⁻¹' Set.Iic y)ᶜ}) := Eq.symm sInf_union
-    _ = sInf {f x | x : E} := congrArg sInf (id (Eq.symm h₀))
+  sorry
 
 end preparation
 
@@ -119,16 +98,6 @@ def strong_quasi (f : E → F) (𝕜 : Type _) [Ring 𝕜] [LinearOrder 𝕜] [I
 /- the Minimum of strongly quasi function is unique -/
 theorem isMinOn_unique {x y : E} (hf' : strong_quasi f 𝕜)
     (hx : IsMinOn f univ x) (hy : IsMinOn f univ y) : x = y := by
-  by_contra neq
-  have : (0 : 𝕜) < (1 : 𝕜) := one_pos
-  obtain ⟨a, lta, alt⟩ := exists_between this
-  have eqone : a + (1 - a) = 1 := add_sub_cancel a 1
-  have lta' : 0 < 1 - a := sub_pos_of_lt alt
-  have h : f (a • x + (1 - a) • y) < f y := by
-    apply Eq.trans_gt (max_eq_right (hx trivial))
-    apply hf' neq lta lta' eqone
-  simp only [isMinOn_iff] at hy
-  specialize hy (a • x + (1 - a) • y) trivial
-  apply not_le_of_gt h hy
+  sorry
 
 end

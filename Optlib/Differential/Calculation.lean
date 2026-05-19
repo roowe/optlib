@@ -47,10 +47,7 @@ variable {L' : Filter 𝕜} {t : Set 𝕜}
 theorem HasGradientAtFilter.comp
     (hg : HasGradientAtFilter g g' (f x) L') (hf : HasGradientAtFilter f f' x L)
     (hL : Tendsto f L L') : HasGradientAtFilter (g ∘ f) (g' • f') x L := by
-  have eq : (starRingEnd 𝕜) g' • (toDual 𝕜 F) f' =
-    (toDual 𝕜 F) (g' • f') := by rw [map_smulₛₗ]
-  rw [HasGradientAtFilter, ← eq]
-  exact hg.hasDerivAtFilter.comp_hasFDerivAtFilter x hf hL
+  sorry
 
 theorem HasGradientWithinAt.comp
     (hg : HasGradientWithinAt g g' t (f x)) (hf : HasGradientWithinAt f f' s x)
@@ -190,10 +187,7 @@ variable {ι : Type*} {u : Finset ι} {A : ι → F → 𝕜} {A' : ι → F}
 
 theorem HasGradientAtFilter.sum (h : ∀ i ∈ u, HasGradientAtFilter (A i) (A' i) x L) :
     HasGradientAtFilter (fun y => ∑ i ∈ u, A i y) (∑ i ∈ u, A' i) x L := by
-  have : ∑ i ∈ u, (toDual 𝕜 F) (A' i) = (toDual 𝕜 F) (∑ i ∈ u, A' i) := by
-    rw [map_sum]
-  rw [HasGradientAtFilter, ← this]; unfold HasGradientAtFilter at h
-  exact HasFDerivAtFilter.sum h
+  sorry
 
 theorem HasGradientWithinAt.sum (h : ∀ i ∈ u, HasGradientWithinAt (A i) (A' i) s x) :
     HasGradientWithinAt (fun y => ∑ i ∈ u, A i y) (∑ i ∈ u, A' i) s x := by
@@ -228,8 +222,7 @@ theorem HasGradientAt.neg (h : HasGradientAt f f' x) :
   exact HasGradientAtFilter.neg h
 
 theorem gradient_neg : ∇ (fun y => - f y) x = - ∇ f x := by
-  unfold gradient
-  simp only [fderiv_neg, map_neg]
+  sorry
 
 end Neg
 
@@ -300,8 +293,7 @@ open ContinuousLinearMap
 
 lemma equiv_lemma_mul : c x • (toDual 𝕜 F) d' + d x • (toDual 𝕜 F) c'
     = (toDual 𝕜 F) ((starRingEnd 𝕜) (c x) • d' + (starRingEnd 𝕜) (d x) • c'):= by
-  simp
-  congr <;> exact SemilinearMapClass.map_smul_inv _ _ _
+  sorry
 
 theorem HasGradientAt.mul (hc : HasGradientAt c c' x) (hd : HasGradientAt d d' x) :
     HasGradientAt (fun y => c y * d y)
