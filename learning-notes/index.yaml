@@ -1,0 +1,38 @@
+version: 1
+language: zh-CN
+format:
+  primary: typst
+  checked_examples: lean
+notes:
+  - id: convex-basic
+    title: Convex Basic 学习笔记
+    source_html: /Users/luoliwei/myproject/lean-howto/mathlib/convex_basic_note.html
+    typst: typst/notes/convex-basic.typ
+    pdf: typst/build/convex-basic.pdf
+    related_mathlib:
+      - Mathlib.Analysis.Convex.Basic
+  - id: mathlib-linear-algebra
+    title: Mathlib Notes: Inner Product & Basis
+    source_html: /Users/luoliwei/myproject/lean-howto/mathlib/mathlib_linear_algebra_notes_html.html
+    typst: typst/notes/mathlib-linear-algebra.typ
+    pdf: typst/build/mathlib-linear-algebra.pdf
+    related_mathlib:
+      - Mathlib.Analysis.InnerProductSpace.Basic
+      - Mathlib.LinearAlgebra.Basis.Defs
+      - Mathlib.LinearAlgebra.Basis.Basic
+  - id: mathlib-finite-dimension
+    title: Mathlib 有限维拓扑向量空间理论笔记
+    source_html: /Users/luoliwei/myproject/lean-howto/mathlib/mathlib_finite_dimension_notes.html
+    typst: typst/notes/mathlib-finite-dimension.typ
+    pdf: typst/build/mathlib-finite-dimension.pdf
+    related_mathlib:
+      - Mathlib.LinearAlgebra.FiniteDimensional.Basic
+      - Mathlib.Topology.Algebra.Module.FiniteDimension
+  - id: pilp-lesson
+    title: Mathlib.Analysis.Normed.Lp.PiLp 学习笔记
+    source_html: /Users/luoliwei/myproject/lean-howto/mathlib/pilp_lesson_html.html
+    typst: typst/notes/pilp-lesson.typ
+    pdf: typst/build/pilp-lesson.pdf
+    related_mathlib:
+      - Mathlib.Analysis.Normed.Lp.PiLp
+
